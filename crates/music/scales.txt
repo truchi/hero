@@ -1,0 +1,92 @@
+1P 2M 3M 5P 6M, Major pentatonic, Pentatonic
+1P 3M 4P 5P 7M, Ionian pentatonic
+1P 3M 4P 5P 7m, Mixolydian pentatonic, Indian
+1P 2M 4P 5P 6M, Ritusen
+1P 2M 4P 5P 7m, Egyptian
+1P 3M 4P 5d 7m, Neopolitan major pentatonic
+1P 3m 4P 5P 6m, Vietnamese 1
+1P 2m 3m 5P 6m, Pelog
+1P 2m 4P 5P 6m, Kumoijoshi
+1P 2M 3m 5P 6m, Hirajoshi
+1P 2m 4P 5d 7m, Iwato
+1P 2m 4P 5P 7m, In-sen
+1P 3M 4A 5P 7M, Lydian pentatonic, Chinese
+1P 3m 4P 6m 7m, Malkos raga
+1P 3m 4P 5d 7m, Locrian pentatonic, Minor seven flat five pentatonic
+1P 3m 4P 5P 7m, Minor pentatonic, Vietnamese 2
+1P 3m 4P 5P 6M, Minor six pentatonic
+1P 2M 3m 5P 6M, Flat three pentatonic, Kumoi
+1P 2M 3M 5P 6m, Flat six pentatonic
+1P 2m 3M 5P 6M, Scriabin
+1P 3M 5d 6m 7m, Whole tone pentatonic
+1P 3M 4A 5A 7M, Lydian #5P pentatonic
+1P 3M 4A 5P 7m, Lydian dominant pentatonic
+1P 3m 4P 5P 7M, Minor #7M pentatonic
+1P 3m 4d 5d 7m, Super locrian pentatonic
+1P 2M 3m 4P 5P 7M, Minor hexatonic
+1P 2A 3M 5P 5A 7M, Augmented
+1P 2M 3m 3M 5P 6M, Major blues
+1P 2M 4P 5P 6M 7m, Piongio
+1P 2m 3M 4A 6M 7m, Prometheus neopolitan
+1P 2M 3M 4A 6M 7m, Prometheus
+1P 2m 3M 5d 6m 7m, Mystery #1
+1P 2m 3M 4P 5A 6M, Six tone symmetric
+1P 2M 3M 4A 5A 7m, Whole tone, Messiaen's mode #1
+1P 2m 4P 4A 5P 7M, Messiaen's mode #5
+1P 3m 4P 5d 5P 7m, Minor blues, Blues
+1P 2M 3M 4P 5d 6m 7m, Locrian major, Arabian
+1P 2m 3M 4A 5P 6m 7M, Double harmonic lydian
+1P 2M 3m 4P 5P 6m 7M, Harmonic minor
+1P 2m 2A 3M 4A 6m 7m, Altered, Super locrian, Diminished whole tone, Pomeroy
+1P 2M 3m 4P 5d 6m 7m, Locrian #2, Half-diminished, Aeolian b5
+1P 2M 3M 4P 5P 6m 7m, Mixolydian b6, Melodic minor fifth mode, Hindu
+1P 2M 3M 4A 5P 6M 7m, Lydian dominant, Lydian b7, Overtone
+1P 2M 3M 4A 5P 6M 7M, Lydian
+1P 2M 3M 4A 5A 6M 7M, Lydian augmented
+1P 2m 3m 4P 5P 6M 7m, Dorian b2, Phrygian #6, Melodic minor second mode
+1P 2M 3m 4P 5P 6M 7M, Melodic minor
+1P 2m 3m 4P 5d 6m 7m, Locrian
+1P 2m 3m 4d 5d 6m 7d, Ultralocrian, Superlocrian bb7, Superlocrian diminished
+1P 2m 3m 4P 5d 6M 7m, Locrian 6, Locrian natural 6, Locrian sharp 6
+1P 2A 3M 4P 5P 5A 7M, Augmented heptatonic
+1P 2M 3m 4A 5P 6M 7m, Dorian #4, Ukrainian dorian, Romanian minor, Altered dorian
+1P 2M 3m 4A 5P 6M 7M, Lydian diminished
+1P 2m 3m 4P 5P 6m 7m, Phrygian
+1P 2M 3M 4A 5A 7m 7M, Leading whole tone
+1P 2M 3M 4A 5P 6m 7m, Lydian minor
+1P 2m 3M 4P 5P 6m 7m, Phrygian dominant, Spanish, Phrygian major
+1P 2m 3m 4P 5P 6m 7M, Balinese
+1P 2m 3m 4P 5P 6M 7M, Neopolitan major
+1P 2M 3m 4P 5P 6m 7m, Aeolian, Minor
+1P 2M 3M 4P 5P 6m 7M, Harmonic major
+1P 2m 3M 4P 5P 6m 7M, Double harmonic major, Gypsy
+1P 2M 3m 4P 5P 6M 7m, Dorian
+1P 2M 3m 4A 5P 6m 7M, Hungarian minor
+1P 2A 3M 4A 5P 6M 7m, Hungarian major
+1P 2m 3M 4P 5d 6M 7m, Oriental
+1P 2m 3m 3M 4A 5P 7m, Flamenco
+1P 2m 3m 4A 5P 6m 7M, Todi raga
+1P 2M 3M 4P 5P 6M 7m, Mixolydian, Dominant
+1P 2m 3M 4P 5d 6m 7M, Persian
+1P 2M 3M 4P 5P 6M 7M, Major, Ionian
+1P 2m 3M 5d 6m 7m 7M, Enigmatic
+1P 2M 3M 4P 5A 6M 7M, Major augmented, Major #5, Ionian augmented, Ionian #5
+1P 2A 3M 4A 5P 6M 7M, Lydian #9
+1P 2m 2M 4P 4A 5P 6m 7M, Messiaen's mode #4
+1P 2m 3M 4P 4A 5P 6m 7M, Purvi raga
+1P 2m 3m 3M 4P 5P 6m 7m, Spanish heptatonic
+1P 2M 3M 4P 5P 6M 7m 7M, Bebop
+1P 2M 3m 3M 4P 5P 6M 7m, Bebop minor
+1P 2M 3M 4P 5P 5A 6M 7M, Bebop major
+1P 2m 3m 4P 5d 5P 6m 7m, Bebop locrian
+1P 2M 3m 4P 5P 6m 7m 7M, Minor bebop
+1P 2M 3m 4P 5d 6m 6M 7M, Diminished, Whole-half diminished
+1P 2M 3M 4P 5d 5P 6M 7M, Ichikosucho
+1P 2M 3m 4P 5P 6m 6M 7M, Minor six diminished
+1P 2m 3m 3M 4A 5P 6M 7m, Half-whole diminished, Dominant diminished, Messiaen's mode #2
+1P 3m 3M 4P 5P 6M 7m 7M, Kafi raga
+1P 2M 3M 4P 4A 5A 6A 7M, Messiaen's mode #6
+1P 2M 3m 3M 4P 5d 5P 6M 7m, Composite blues
+1P 2M 3m 3M 4A 5P 6m 7m 7M, Messiaen's mode #3
+1P 2m 2M 3m 4P 4A 5P 6m 6M 7M, Messiaen's mode #7
+1P 2m 2M 3m 3M 4P 5d 5P 6m 6M 7m 7M, Chromatic

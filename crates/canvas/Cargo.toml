@@ -1,0 +1,20 @@
+[package]
+name = "canvas"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+music = { path = "../music" }
+web-sys = { version = "0.3", features = [
+  "Window",
+  "Document",
+  "Element",
+  "Node",
+  "Text",
+  "CssStyleDeclaration",
+  "HtmlElement",
+  "HtmlCanvasElement",
+  "CanvasRenderingContext2d",
+] }
