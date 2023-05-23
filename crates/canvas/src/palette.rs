@@ -1,7 +1,6 @@
-use crate::Rgb;
+use crate::Color;
 use music::*;
-// ├
-// ┤
+use wasm_bindgen::JsValue;
 
 //                                     ┌───┐
 // ┌───┐ ┌───┐       ┌───┐ ┌───┐ ┌───┐ │##3│ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐
@@ -16,97 +15,111 @@ use music::*;
 //                                     │  4│
 //                                     └───┘
 
-#[derive(Copy, Clone, Debug)]
+pub fn hsl(h: u16, s: u8, l: u8) -> Color {
+    Color::from_str(&format!("hsl({} {}% {}%)", h, s, l))
+}
+
+#[derive(Clone, Debug)]
 pub struct Palette {
-    pub background: Rgb,
+    pub background: Color,
 
-    pub double_flat_unisson: Rgb,
-    pub flat_unisson: Rgb,
-    pub natural_unisson: Rgb,
-    pub sharp_unisson: Rgb,
-    pub double_sharp_unisson: Rgb,
+    pub double_flat_unisson: Color,
+    pub flat_unisson: Color,
+    pub natural_unisson: Color,
+    pub sharp_unisson: Color,
+    pub double_sharp_unisson: Color,
 
-    pub double_flat_second: Rgb,
-    pub flat_second: Rgb,
-    pub natural_second: Rgb,
-    pub sharp_second: Rgb,
-    pub double_sharp_second: Rgb,
+    pub double_flat_second: Color,
+    pub flat_second: Color,
+    pub natural_second: Color,
+    pub sharp_second: Color,
+    pub double_sharp_second: Color,
 
-    pub double_flat_third: Rgb,
-    pub flat_third: Rgb,
-    pub natural_third: Rgb,
-    pub sharp_third: Rgb,
-    pub double_sharp_third: Rgb,
+    pub double_flat_third: Color,
+    pub flat_third: Color,
+    pub natural_third: Color,
+    pub sharp_third: Color,
+    pub double_sharp_third: Color,
 
-    pub double_flat_fourth: Rgb,
-    pub flat_fourth: Rgb,
-    pub natural_fourth: Rgb,
-    pub sharp_fourth: Rgb,
-    pub double_sharp_fourth: Rgb,
+    pub double_flat_fourth: Color,
+    pub flat_fourth: Color,
+    pub natural_fourth: Color,
+    pub sharp_fourth: Color,
+    pub double_sharp_fourth: Color,
 
-    pub double_flat_fifth: Rgb,
-    pub flat_fifth: Rgb,
-    pub natural_fifth: Rgb,
-    pub sharp_fifth: Rgb,
-    pub double_sharp_fifth: Rgb,
+    pub double_flat_fifth: Color,
+    pub flat_fifth: Color,
+    pub natural_fifth: Color,
+    pub sharp_fifth: Color,
+    pub double_sharp_fifth: Color,
 
-    pub double_flat_sixth: Rgb,
-    pub flat_sixth: Rgb,
-    pub natural_sixth: Rgb,
-    pub sharp_sixth: Rgb,
-    pub double_sharp_sixth: Rgb,
+    pub double_flat_sixth: Color,
+    pub flat_sixth: Color,
+    pub natural_sixth: Color,
+    pub sharp_sixth: Color,
+    pub double_sharp_sixth: Color,
 
-    pub double_flat_seventh: Rgb,
-    pub flat_seventh: Rgb,
-    pub natural_seventh: Rgb,
-    pub sharp_seventh: Rgb,
-    pub double_sharp_seventh: Rgb,
+    pub double_flat_seventh: Color,
+    pub flat_seventh: Color,
+    pub natural_seventh: Color,
+    pub sharp_seventh: Color,
+    pub double_sharp_seventh: Color,
 }
 
 impl Palette {
-    pub fn rgb(&self, interval: Interval) -> Rgb {
-        match interval {
-            Interval(DoubleFlat, Unisson) => self.double_flat_unisson,
-            Interval(Flat, Unisson) => self.flat_unisson,
-            Interval(Natural, Unisson) => self.natural_unisson,
-            Interval(Sharp, Unisson) => self.sharp_unisson,
-            Interval(DoubleSharp, Unisson) => self.double_sharp_unisson,
+    pub fn background(&self) -> &Color {
+        &self.background
+    }
 
-            Interval(DoubleFlat, Second) => self.double_flat_second,
-            Interval(Flat, Second) => self.flat_second,
-            Interval(Natural, Second) => self.natural_second,
-            Interval(Sharp, Second) => self.sharp_second,
-            Interval(DoubleSharp, Second) => self.double_sharp_second,
+    pub fn color(&self, interval: Interval) -> &Color {
+        let Interval(accidental, name) = interval;
 
-            Interval(DoubleFlat, Third) => self.double_flat_third,
-            Interval(Flat, Third) => self.flat_third,
-            Interval(Natural, Third) => self.natural_third,
-            Interval(Sharp, Third) => self.sharp_third,
-            Interval(DoubleSharp, Third) => self.double_sharp_third,
-
-            Interval(DoubleFlat, Fourth) => self.double_flat_fourth,
-            Interval(Flat, Fourth) => self.flat_fourth,
-            Interval(Natural, Fourth) => self.natural_fourth,
-            Interval(Sharp, Fourth) => self.sharp_fourth,
-            Interval(DoubleSharp, Fourth) => self.double_sharp_fourth,
-
-            Interval(DoubleFlat, Fifth) => self.double_flat_fifth,
-            Interval(Flat, Fifth) => self.flat_fifth,
-            Interval(Natural, Fifth) => self.natural_fifth,
-            Interval(Sharp, Fifth) => self.sharp_fifth,
-            Interval(DoubleSharp, Fifth) => self.double_sharp_fifth,
-
-            Interval(DoubleFlat, Sixth) => self.double_flat_sixth,
-            Interval(Flat, Sixth) => self.flat_sixth,
-            Interval(Natural, Sixth) => self.natural_sixth,
-            Interval(Sharp, Sixth) => self.sharp_sixth,
-            Interval(DoubleSharp, Sixth) => self.double_sharp_sixth,
-
-            Interval(DoubleFlat, Seventh) => self.double_flat_seventh,
-            Interval(Flat, Seventh) => self.flat_seventh,
-            Interval(Natural, Seventh) => self.natural_seventh,
-            Interval(Sharp, Seventh) => self.sharp_seventh,
-            Interval(DoubleSharp, Seventh) => self.double_sharp_seventh,
+        match accidental {
+            DoubleFlat => match name {
+                Unisson => &self.double_flat_unisson,
+                Second => &self.double_flat_second,
+                Third => &self.double_flat_third,
+                Fourth => &self.double_flat_fourth,
+                Fifth => &self.double_flat_fifth,
+                Sixth => &self.double_flat_sixth,
+                Seventh => &self.double_flat_seventh,
+            },
+            Flat => match name {
+                Unisson => &self.flat_unisson,
+                Second => &self.flat_second,
+                Third => &self.flat_third,
+                Fourth => &self.flat_fourth,
+                Fifth => &self.flat_fifth,
+                Sixth => &self.flat_sixth,
+                Seventh => &self.flat_seventh,
+            },
+            Natural => match name {
+                Unisson => &self.natural_unisson,
+                Second => &self.natural_second,
+                Third => &self.natural_third,
+                Fourth => &self.natural_fourth,
+                Fifth => &self.natural_fifth,
+                Sixth => &self.natural_sixth,
+                Seventh => &self.natural_seventh,
+            },
+            Sharp => match name {
+                Unisson => &self.sharp_unisson,
+                Second => &self.sharp_second,
+                Third => &self.sharp_third,
+                Fourth => &self.sharp_fourth,
+                Fifth => &self.sharp_fifth,
+                Sixth => &self.sharp_sixth,
+                Seventh => &self.sharp_seventh,
+            },
+            DoubleSharp => match name {
+                Unisson => &self.double_sharp_unisson,
+                Second => &self.double_sharp_second,
+                Third => &self.double_sharp_third,
+                Fourth => &self.double_sharp_fourth,
+                Fifth => &self.double_sharp_fifth,
+                Sixth => &self.double_sharp_sixth,
+                Seventh => &self.double_sharp_seventh,
+            },
         }
     }
 }

@@ -649,22 +649,22 @@ const fn whatever_dictonary_mode() -> DictionaryMode {
 mod test_utils {
     use super::*;
 
-    pub fn test(modes: List<Intervals>) {
+    pub fn _test(modes: List<Intervals>) {
         let mut modes = modes.as_ref().into_iter().copied().map(|i| i.0);
 
         if let Some(first) = modes.next() {
-            let mut first = relative(first);
+            let mut first = _relative(first);
 
             for mode in modes {
                 let removed = first.remove(0);
                 first.push(removed);
 
-                assert_eq!(first, relative(mode));
+                assert_eq!(first, _relative(mode));
             }
         }
     }
 
-    pub fn relative(mode: List<Interval>) -> Vec<u8> {
+    pub fn _relative(mode: List<Interval>) -> Vec<u8> {
         let mut intervals = mode.as_ref().into_iter();
         let mut relative = vec![];
 

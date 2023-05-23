@@ -37,6 +37,18 @@ impl NoteName {
     pub fn double_sharp(&self) -> Note {
         Note(*self, DoubleSharp)
     }
+
+    pub fn semitones(&self) -> u8 {
+        match self {
+            C => 0,
+            D => 2,
+            E => 4,
+            F => 5,
+            G => 7,
+            A => 9,
+            B => 11,
+        }
+    }
 }
 
 // ********************************************************************************************** //
@@ -53,6 +65,14 @@ impl Note {
 
     pub const fn accidental(&self) -> Accidental {
         self.1
+    }
+
+    pub fn semitones(&self) -> u8 {
+        const OCTAVE: i8 = crate::OCTAVE as i8;
+
+        let semitones = self.name().semitones() as i8 + self.accidental().semitones();
+
+        (((semitones % OCTAVE) + OCTAVE) % OCTAVE) as u8
     }
 }
 

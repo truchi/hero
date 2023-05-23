@@ -110,10 +110,39 @@ const _DIATONIC: [Interval; 7] = [
 #[derive(Copy, Clone, Eq, PartialEq, Debug)]
 pub struct Intervals(pub List<Interval>);
 
+impl Intervals {
+    pub const CHROMATIC: Self = intervals![
+        Interval(Natural, Unisson),
+        Interval(Flat, Second),
+        Interval(Natural, Second),
+        Interval(Flat, Third),
+        Interval(Natural, Third),
+        Interval(Natural, Fourth),
+        Interval(Flat, Fifth),
+        Interval(Natural, Fifth),
+        Interval(Flat, Sixth),
+        Interval(Natural, Sixth),
+        Interval(Flat, Seventh),
+        Interval(Natural, Seventh),
+    ];
+}
+
+impl FromIterator<Interval> for Intervals {
+    fn from_iter<I: IntoIterator<Item = Interval>>(items: I) -> Self {
+        Self(List::from_iter(items))
+    }
+}
+
+impl<const N: usize> From<[Interval; N]> for Intervals {
+    fn from(items: [Interval; N]) -> Self {
+        Self(List::from(items))
+    }
+}
+
 #[macro_export]
 macro_rules! intervals {
     () => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             0,
             [
                 $crate::Natural.unisson(),
@@ -132,7 +161,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             1,
             [
                 $a,
@@ -151,7 +180,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             2,
             [
                 $a,
@@ -170,7 +199,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             3,
             [
                 $a,
@@ -189,7 +218,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             4,
             [
                 $a,
@@ -208,7 +237,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             5,
             [
                 $a,
@@ -227,7 +256,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             6,
             [
                 $a,
@@ -246,7 +275,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr, $g:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             7,
             [
                 $a,
@@ -265,7 +294,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr, $g:expr, $h:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             8,
             [
                 $a,
@@ -284,7 +313,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr, $g:expr, $h:expr, $i:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             9,
             [
                 $a,
@@ -303,7 +332,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr, $g:expr, $h:expr, $i:expr, $j:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             10,
             [
                 $a,
@@ -322,7 +351,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr, $g:expr, $h:expr, $i:expr, $j:expr, $k:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             11,
             [
                 $a,
@@ -341,7 +370,7 @@ macro_rules! intervals {
         ))
     };
     ($a:expr, $b:expr, $c:expr, $d:expr, $e:expr, $f:expr, $g:expr, $h:expr, $i:expr, $j:expr, $k:expr, $l:expr $(,)?) => {
-        $crate::Intervals(crate::List::from_raw(
+        $crate::Intervals($crate::list::List::from_raw(
             12,
             [$a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l],
         ))
